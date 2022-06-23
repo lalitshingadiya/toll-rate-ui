@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Secure App Report page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+    <body>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <h1>Secure App Report Page</h1>
+                <table class="table table-striped">
+                    <tr>
+                        <th>Toll ID</th>
+                        <th>Plate</th>
+                        <th>TimeStamp</th>
+                    </tr>
+                     <tr th:each="tollRecord : ${tollData}">
+                        <td th:text="${tollRecord.recordId}"></td>
+                        <td th:text="${tollRecord.licencePlate}"></td>
+                        <td th:text="${tollRecord.timestamp}"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </body>
+</html>
